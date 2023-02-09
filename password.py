@@ -16,7 +16,7 @@ def passwords(n):
             password += " ".join(secrets.choice(symbols))
         if len(password) <= n:
             break
-    return len(password)
+    return "Your password is: {}".format(password)
 
 print(passwords(23))
 print(passwords(9))
