@@ -2,7 +2,7 @@ import secrets
 import string
 
 def passwords(n):
-    password = " "
+    password = ""
     password_length = n
 
     letters = string.ascii_letters
@@ -12,12 +12,13 @@ def passwords(n):
 
 
     while True:
-        for i in range(password_length + 1):
+        for i in range(password_length):
             password += " ".join(secrets.choice(symbols))
-        if len(password) > 8:
+        if len(password) <= n:
             break
-    return password
+    return len(password)
 
+print(passwords(23))
 print(passwords(9))
 print(passwords(10))
 print(passwords(12))
