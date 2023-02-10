@@ -1,7 +1,7 @@
 def login(name, surname):
     username = "{}{}".format(name[0], surname).lower()
     email = username + "@" + "domain.com"
-    return """{} {} your username is: {} and your password is: {}""".format(name, surname, username, email)
+    return "{} {} your username is: {} and your password is: {}".format(name, surname, username, email)
 
 
 
