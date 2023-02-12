@@ -8,17 +8,28 @@ def passwords(n):
     letters = string.ascii_letters
     numbers = string.digits
     special_char = string.punctuation
-    symbols = letters + numbers + special_char
+    symbols = letters + numbers 
 
 
     while True:
-        for i in range(password_length):
+        for i in range(password_length-1):
             password += " ".join(secrets.choice(symbols))
-        if len(password) <= n:
-            break
-    return "Length of your password is {}. Your password is: {} ".format(len(password), password)
 
-print(passwords(23))
+        for z in range(1):
+            password += " ".join(secrets.choice(special_char))
+
+            if len(password) <= n:
+                break
+        return "Length of your password is {}. Your password is: {} ".format(len(password), password)
+
 print(passwords(9))
-print(passwords(10))
-print(passwords(12))
+print(passwords(6))
+print(passwords(23))
+
+#The secrets module provides access to the most secure source of randomness that your operating system provides.
+#secrets.choice(sequence): Return a randomly chosen element from a non-empty sequence.
+#alphabet = string.ascii_letters + string.digits + string.punctuation
+#letters = string.ascii_letters
+#numbers = string.digits
+#special_characters = string.punctuation
+#all = string.printable
