@@ -1,5 +1,10 @@
+#!/usr/bin/env python3
 import secrets
 import string
+import sys 
+
+n = sys.argv[1]
+n = int(n)
 
 def passwords(n):
     password = ""
@@ -22,9 +27,7 @@ def passwords(n):
                 break
         return "Length of your password is {}. Your password is: {} ".format(len(password), password)
 
-print(passwords(9))
-print(passwords(6))
-print(passwords(23))
+print(passwords(n))
 
 #The secrets module provides access to the most secure source of randomness that your operating system provides.
 #secrets.choice(sequence): Return a randomly chosen element from a non-empty sequence.
